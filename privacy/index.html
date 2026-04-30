@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補品日記 — 隱私權政策</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: #13111F;
+      color: #EAE8FF;
+      line-height: 1.8;
+      padding: 0 0 60px;
+    }
+    header {
+      background: linear-gradient(135deg, #6B5CF0, #4A3CC9);
+      padding: 48px 24px 36px;
+      text-align: center;
+    }
+    .logo {
+      width: 72px; height: 72px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 36px;
+    }
+    header h1 { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    header p { font-size: 14px; color: rgba(255,255,255,0.7); }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+    .updated {
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+      color: #9290B8;
+    }
+    section {
+      background: #1E1B30;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 16px;
+      border: 0.5px solid rgba(107,92,240,0.2);
+    }
+    h2 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #B8AEFF;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px; height: 16px;
+      background: #6B5CF0;
+      border-radius: 2px;
+    }
+    p { font-size: 14px; color: #C0BDD8; margin-bottom: 10px; }
+    ul { padding-left: 20px; margin-bottom: 10px; }
+    li { font-size: 14px; color: #C0BDD8; margin-bottom: 6px; }
+    .highlight {
+      background: rgba(107,92,240,0.12);
+      border-left: 3px solid #6B5CF0;
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 12px 0;
+      font-size: 14px;
+      color: #B8AEFF;
+    }
+    a { color: #8B7EF8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      color: #5C5A78;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">💊</div>
+  <h1>補品日記 隱私權政策</h1>
+  <p>VitaTrack — Supplement Diary</p>
+</header>
+
+<div class="container">
+  <p class="updated">最後更新日期：2026 年 4 月 30 日</p>
+
+  <section>
+    <h2>關於本政策</h2>
+    <p>補品日記（以下簡稱「本應用程式」）由個人開發者 Jerry Chen 開發及維護。本隱私權政策說明我們如何收集、使用及保護您的個人資訊。</p>
+    <p>使用本應用程式即代表您同意本政策的條款。如您不同意，請停止使用本應用程式。</p>
+  </section>
+
+  <section>
+    <h2>我們收集的資料</h2>
+    <p>本應用程式僅收集您主動提供的資訊：</p>
+    <ul>
+      <li><strong>帳號資訊：</strong>透過 Google 登入時取得的電子郵件地址與使用者 ID</li>
+      <li><strong>補品記錄：</strong>您輸入的補品名稱、服用量、打卡紀錄</li>
+      <li><strong>健康數據：</strong>您選擇性輸入的體重、血壓、睡眠等個人健康數據</li>
+      <li><strong>感受日誌：</strong>您記錄的心情評分與備注</li>
+      <li><strong>購買記錄：</strong>透過 RevenueCat 處理的訂閱購買資訊</li>
+    </ul>
+    <div class="highlight">
+      我們不會收集您的位置資訊、通訊錄、相片或其他與應用程式功能無關的資料。
+    </div>
+  </section>
+
+  <section>
+    <h2>資料用途</h2>
+    <p>我們收集的資料僅用於以下目的：</p>
+    <ul>
+      <li>提供補品打卡、排程提醒等核心功能</li>
+      <li>透過 Firebase 實現跨裝置資料同步與備份</li>
+      <li>處理進階版訂閱付款與權限驗證</li>
+      <li>提供 AI 個人化功能（進階版）</li>
+    </ul>
+    <p>我們不會將您的個人資料出售、出租或以任何方式提供給第三方作為商業用途。</p>
+  </section>
+
+  <section>
+    <h2>第三方服務</h2>
+    <p>本應用程式使用以下第三方服務，各有其獨立的隱私權政策：</p>
+    <ul>
+      <li><strong>Firebase（Google）：</strong>帳號驗證與雲端資料儲存 — <a href="https://firebase.google.com/support/privacy" target="_blank">查看政策</a></li>
+      <li><strong>RevenueCat：</strong>訂閱管理與付款處理 — <a href="https://www.revenuecat.com/privacy" target="_blank">查看政策</a></li>
+      <li><strong>Groq：</strong>AI 對話功能（進階版）— <a href="https://groq.com/privacy-policy/" target="_blank">查看政策</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>資料安全</h2>
+    <p>我們採取以下措施保護您的資料安全：</p>
+    <ul>
+      <li>所有資料傳輸均透過 HTTPS 加密</li>
+      <li>Firebase 安全規則確保只有您本人可以存取自己的資料</li>
+      <li>本地資料儲存於裝置的 SQLite 資料庫中，不對外開放</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>您的權利</h2>
+    <p>您對自己的資料擁有以下權利：</p>
+    <ul>
+      <li><strong>存取權：</strong>您可以隨時在應用程式中查看您的所有資料</li>
+      <li><strong>刪除權：</strong>您可以透過聯絡我們要求刪除您的帳號及所有相關資料</li>
+      <li><strong>退出權：</strong>您可以隨時在設定頁面登出並停止使用</li>
+    </ul>
+    <p>如需刪除帳號或資料，請發送電子郵件至：<a href="mailto:jerry72624@gmail.com">jerry72624@gmail.com</a></p>
+  </section>
+
+  <section>
+    <h2>健康資訊免責聲明</h2>
+    <div class="highlight">
+      本應用程式提供的所有內容（包括 AI 生成的建議）僅供個人記錄與參考用途，不構成醫療建議、診斷或治療。如有任何健康疑慮，請諮詢合格的醫療專業人員。
+    </div>
+  </section>
+
+  <section>
+    <h2>兒童隱私</h2>
+    <p>本應用程式不針對 13 歲以下兒童設計，我們不會故意收集兒童的個人資料。如果您發現有兒童使用本應用程式，請聯絡我們。</p>
+  </section>
+
+  <section>
+    <h2>政策更新</h2>
+    <p>我們可能會不定期更新本隱私權政策。更新後我們會在本頁面顯示新的日期，重大變更時會在應用程式內通知您。</p>
+  </section>
+
+  <section>
+    <h2>聯絡我們</h2>
+    <p>如果您對本隱私權政策有任何疑問，請透過以下方式聯絡我們：</p>
+    <p>📧 電子郵件：<a href="mailto:jerry72624@gmail.com">jerry72624@gmail.com</a></p>
+    <p>🌐 網站：<a href="https://hakuhaku24.github.io">hakuhaku24.github.io</a></p>
+  </section>
+</div>
+
+<footer>
+  © 2026 補品日記 VitaTrack · Jerry Chen · 保留所有權利
+</footer>
+
+</body>
+</html>
