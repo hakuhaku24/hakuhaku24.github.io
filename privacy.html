@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補品日記 — 隱私權政策</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: #13111F;
+      color: #EAE8FF;
+      line-height: 1.8;
+      padding: 0 0 60px;
+    }
+    header {
+      background: linear-gradient(135deg, #6B5CF0, #4A3CC9);
+      padding: 48px 24px 36px;
+      text-align: center;
+    }
+    .logo {
+      width: 72px; height: 72px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 36px;
+    }
+    header h1 { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    header p { font-size: 14px; color: rgba(255,255,255,0.7); }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+    .updated { text-align: center; padding: 20px; font-size: 13px; color: #9290B8; }
+    .nav-links { display: flex; justify-content: center; gap: 24px; padding: 16px; flex-wrap: wrap; }
+    .nav-links a { font-size: 13px; color: #8B7EF8; text-decoration: none; }
+    section {
+      background: #1E1B30;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 16px;
+      border: 0.5px solid rgba(107,92,240,0.2);
+    }
+    section.delete-section { border: 1px solid rgba(240,100,100,0.3); background: #1E1520; }
+    h2 {
+      font-size: 16px; font-weight: 600; color: #B8AEFF;
+      margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+    }
+    h2::before {
+      content: ''; display: inline-block;
+      width: 4px; height: 16px; background: #6B5CF0; border-radius: 2px;
+    }
+    h2.danger-title { color: #F08080; }
+    h2.danger-title::before { background: #F08080; }
+    p { font-size: 14px; color: #C0BDD8; margin-bottom: 10px; }
+    ul, ol { padding-left: 20px; margin-bottom: 10px; }
+    li { font-size: 14px; color: #C0BDD8; margin-bottom: 6px; }
+    .highlight {
+      background: rgba(107,92,240,0.12); border-left: 3px solid #6B5CF0;
+      padding: 12px 16px; border-radius: 0 8px 8px 0;
+      margin: 12px 0; font-size: 14px; color: #B8AEFF;
+    }
+    .warning {
+      background: rgba(240,100,100,0.1); border-left: 3px solid #F08080;
+      padding: 12px 16px; border-radius: 0 8px 8px 0;
+      margin: 12px 0; font-size: 14px; color: #F08080;
+    }
+    a { color: #8B7EF8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .steps { list-style: none; padding-left: 0; counter-reset: step; }
+    .steps li { counter-increment: step; padding-left: 36px; position: relative; margin-bottom: 10px; }
+    .steps li::before {
+      content: counter(step); position: absolute; left: 0; top: 0;
+      width: 24px; height: 24px; background: rgba(107,92,240,0.3);
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 12px; font-weight: 700; color: #B8AEFF;
+    }
+    .delete-form { margin-top: 20px; }
+    .form-group { margin-bottom: 16px; }
+    label { display: block; font-size: 13px; color: #9290B8; margin-bottom: 6px; font-weight: 500; }
+    input[type="email"], textarea, select {
+      width: 100%; background: #13111F;
+      border: 1px solid rgba(107,92,240,0.3); border-radius: 10px;
+      padding: 12px 14px; color: #EAE8FF; font-size: 14px;
+      font-family: inherit; outline: none; transition: border-color 0.2s;
+    }
+    input[type="email"]:focus, textarea:focus, select:focus { border-color: #6B5CF0; }
+    textarea { height: 100px; resize: vertical; }
+    select option { background: #1E1B30; }
+    .submit-btn {
+      width: 100%; background: #C0392B; color: white; border: none;
+      border-radius: 12px; padding: 14px; font-size: 15px; font-weight: 600;
+      cursor: pointer; transition: background 0.2s; font-family: inherit;
+    }
+    .submit-btn:hover { background: #E74C3C; }
+    .submit-btn:disabled { background: #555; cursor: not-allowed; }
+    .success-msg {
+      display: none; background: rgba(29,158,117,0.15);
+      border: 1px solid #1D9E75; border-radius: 12px;
+      padding: 16px; text-align: center; color: #1D9E75;
+      font-size: 14px; margin-top: 16px;
+    }
+    footer { text-align: center; padding: 24px; font-size: 13px; color: #5C5A78; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">💊</div>
+  <h1>補品日記 隱私權政策</h1>
+  <p>VitaTrack — Supplement Diary</p>
+</header>
+
+<div class="nav-links">
+  <a href="#privacy">隱私權政策</a>
+  <a href="#delete">刪除帳號</a>
+  <a href="#contact">聯絡我們</a>
+</div>
+
+<div class="container">
+  <p class="updated">最後更新日期：2026 年 4 月 30 日</p>
+
+  <span id="privacy"></span>
+
+  <section>
+    <h2>關於本政策</h2>
+    <p>補品日記由個人開發者 Jerry Chen 開發及維護。本政策說明我們如何收集、使用及保護您的個人資訊。使用本應用程式即代表您同意本政策。</p>
+  </section>
+
+  <section>
+    <h2>我們收集的資料</h2>
+    <ul>
+      <li><strong>帳號資訊：</strong>透過 Google 登入取得的電子郵件與使用者 ID</li>
+      <li><strong>補品記錄：</strong>您輸入的補品名稱、服用量、打卡紀錄</li>
+      <li><strong>健康數據：</strong>您選擇性輸入的體重、血壓、睡眠等數據</li>
+      <li><strong>感受日誌：</strong>您記錄的心情評分與備注</li>
+      <li><strong>購買記錄：</strong>透過 RevenueCat 處理的訂閱資訊</li>
+    </ul>
+    <div class="highlight">我們不收集位置、通訊錄、相片或與功能無關的資料。</div>
+  </section>
+
+  <section>
+    <h2>資料用途</h2>
+    <ul>
+      <li>提供補品打卡、排程提醒等核心功能</li>
+      <li>Firebase 跨裝置資料同步與備份</li>
+      <li>處理進階版訂閱付款與驗證</li>
+      <li>提供 AI 個人化功能（進階版）</li>
+    </ul>
+    <p>我們不會將您的資料出售或提供給第三方作商業用途。</p>
+  </section>
+
+  <section>
+    <h2>第三方服務</h2>
+    <ul>
+      <li><strong>Firebase（Google）：</strong>帳號驗證與雲端儲存 — <a href="https://firebase.google.com/support/privacy" target="_blank">查看政策</a></li>
+      <li><strong>RevenueCat：</strong>訂閱管理 — <a href="https://www.revenuecat.com/privacy" target="_blank">查看政策</a></li>
+      <li><strong>Groq：</strong>AI 功能（進階版）— <a href="https://groq.com/privacy-policy/" target="_blank">查看政策</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>資料安全</h2>
+    <ul>
+      <li>所有傳輸均透過 HTTPS 加密</li>
+      <li>Firebase 安全規則確保只有您可存取自己的資料</li>
+      <li>本地資料儲存於裝置 SQLite 中，不對外開放</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>健康資訊免責聲明</h2>
+    <div class="highlight">
+      本應用程式所有內容（包含 AI 生成建議）僅供個人記錄與參考，不構成醫療建議、診斷或治療。如有健康疑慮，請諮詢合格醫療人員。
+    </div>
+  </section>
+
+  <section>
+    <h2>兒童隱私</h2>
+    <p>本應用程式不針對 13 歲以下兒童設計，我們不會故意收集兒童個人資料。</p>
+  </section>
+
+  <section>
+    <h2>政策更新</h2>
+    <p>我們可能不定期更新本政策，重大變更時會在應用程式內通知您。</p>
+  </section>
+
+  <!-- 刪除帳號 -->
+  <span id="delete"></span>
+  <section class="delete-section">
+    <h2 class="danger-title">🗑️ 刪除帳號與資料</h2>
+    <p>您有權要求刪除在補品日記中的所有資料，刪除後無法復原。</p>
+    <div class="warning">
+      ⚠️ 刪除後，您的所有補品記錄、打卡資料、健康數據及感受日誌將永久刪除，且無法恢復。
+    </div>
+    <p>刪除範圍包含：</p>
+    <ul>
+      <li>Firebase 帳號與身份驗證資料</li>
+      <li>所有補品、排程、打卡記錄</li>
+      <li>健康數據與感受日誌</li>
+      <li>庫存資料</li>
+    </ul>
+    <p style="margin-top:16px;">處理流程：</p>
+    <ol class="steps">
+      <li>填寫下方表單送出請求</li>
+      <li>我們在 <strong>7 個工作天內</strong>以 email 確認您的身份</li>
+      <li>確認後 <strong>30 天內</strong>完成所有資料刪除</li>
+      <li>刪除完成後發送確認信通知您</li>
+    </ol>
+
+    <div class="delete-form">
+      <form id="deleteForm">
+        <div class="form-group">
+          <label for="email">您的 Google 帳號電子郵件 *</label>
+          <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+        </div>
+        <div class="form-group">
+          <label for="reason">刪除原因（選填）</label>
+          <select id="reason" name="reason">
+            <option value="">請選擇原因</option>
+            <option value="not_using">不再使用此應用程式</option>
+            <option value="privacy">隱私考量</option>
+            <option value="data_concern">對資料使用有疑慮</option>
+            <option value="other">其他原因</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">補充說明（選填）</label>
+          <textarea id="message" name="message" placeholder="如有其他說明，請在此填寫..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">送出刪除請求</button>
+      </form>
+      <div class="success-msg" id="successMsg">
+        ✅ 您的刪除請求已送出！我們將在 7 個工作天內與您聯繫確認。<br>
+        如未收到回覆，請直接寄信至 <a href="mailto:jerry72624@gmail.com">jerry72624@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <span id="contact"></span>
+  <section>
+    <h2>聯絡我們</h2>
+    <p>📧 <a href="mailto:jerry72624@gmail.com">jerry72624@gmail.com</a></p>
+    <p>🌐 <a href="https://hakuhaku24.github.io">hakuhaku24.github.io</a></p>
+  </section>
+</div>
+
+<footer>© 2026 補品日記 VitaTrack · Jerry Chen · 保留所有權利</footer>
+
+<script>
+document.getElementById('deleteForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = document.getElementById('email').value;
+  const reason = document.getElementById('reason').value;
+  const message = document.getElementById('message').value;
+  const btn = this.querySelector('.submit-btn');
+
+  btn.textContent = '送出中...';
+  btn.disabled = true;
+
+  // 用 mailto 作為後備方案，同時顯示成功訊息
+  const subject = encodeURIComponent('補品日記 — 帳號刪除請求');
+  const body = encodeURIComponent(
+    `刪除請求\n\n帳號：${email}\n原因：${reason || '未填寫'}\n說明：${message || '無'}`
+  );
+
+  window.location.href = `mailto:jerry72624@gmail.com?subject=${subject}&body=${body}`;
+
+  setTimeout(() => {
+    document.getElementById('deleteForm').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  }, 1000);
+});
+</script>
+
+</body>
+</html>
