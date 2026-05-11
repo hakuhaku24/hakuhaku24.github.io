@@ -116,7 +116,7 @@
 </div>
 
 <div class="container">
-  <p class="updated">最後更新日期：2026 年 4 月 30 日</p>
+  <p class="updated">最後更新日期：2026 年 5 月 12 日</p>
 
   <span id="privacy"></span>
 
@@ -133,8 +133,19 @@
       <li><strong>健康數據：</strong>您選擇性輸入的體重、血壓、睡眠等數據</li>
       <li><strong>感受日誌：</strong>您記錄的心情評分與備注</li>
       <li><strong>購買記錄：</strong>透過 RevenueCat 處理的訂閱資訊</li>
+      <li><strong>補品照片：</strong>使用拍照辨識功能時，您拍攝或選取的補品包裝照片（僅用於 AI 辨識，不永久儲存於伺服器）</li>
     </ul>
-    <div class="highlight">我們不收集位置、通訊錄、相片或與功能無關的資料。</div>
+    <div class="highlight">補品照片僅於辨識當下傳送至 AI 服務，辨識完成後即丟棄，我們不會永久儲存您的相片。我們不收集位置、通訊錄或與功能無關的資料。</div>
+  </section>
+
+  <section>
+    <h2>相機與相片權限</h2>
+    <p>本應用程式的「拍照辨識補品」功能需要存取您的相機與相片庫，使用說明如下：</p>
+    <ul>
+      <li><strong>相機：</strong>用於拍攝補品包裝，以 AI 自動辨識品名、品牌、成分等資訊</li>
+      <li><strong>相片庫：</strong>用於從相簿選取已拍攝的補品照片進行辨識</li>
+    </ul>
+    <div class="highlight">照片僅用於辨識功能，不會上傳至您的個人帳號或雲端儲存空間，辨識完成後照片資料即從記憶體中清除。</div>
   </section>
 
   <section>
@@ -143,9 +154,21 @@
       <li>提供補品打卡、排程提醒等核心功能</li>
       <li>Firebase 跨裝置資料同步與備份</li>
       <li>處理進階版訂閱付款與驗證</li>
-      <li>提供 AI 個人化功能（進階版）</li>
+      <li>提供 AI 個人化功能（進階版），包含補品對話、週報分析</li>
+      <li>拍照辨識功能：將補品照片傳送至 AI 服務辨識基本資訊，並自動搜尋網路上的相關評價與資料以豐富補品說明</li>
     </ul>
     <p>我們不會將您的資料出售或提供給第三方作商業用途。</p>
+  </section>
+
+  <section>
+    <h2>AI 辨識與網路搜尋</h2>
+    <p>使用「拍照辨識補品」功能時，系統會進行以下三個步驟：</p>
+    <ul>
+      <li><strong>第一步（即時辨識）：</strong>照片透過 Groq Vision API 辨識補品的品名、品牌、成分等基本資訊</li>
+      <li><strong>第二步（網路搜尋）：</strong>以辨識到的品牌與品名為關鍵字，透過 DuckDuckGo 或 Serper.dev 搜尋網路上的相關評價與資料（搜尋關鍵字可能包含補品名稱，但不包含任何個人識別資訊）</li>
+      <li><strong>第三步（AI 整理）：</strong>將辨識結果與搜尋資料傳送至 Google Gemini API，整合生成易讀的補品說明、適合族群、注意事項等資訊</li>
+    </ul>
+    <div class="highlight">以上三個步驟均不包含您的個人資訊，僅涉及補品本身的公開資訊。整理完成的補品說明儲存於您裝置本地及 Firebase 帳號中。</div>
   </section>
 
   <section>
@@ -153,7 +176,10 @@
     <ul>
       <li><strong>Firebase（Google）：</strong>帳號驗證與雲端儲存 — <a href="https://firebase.google.com/support/privacy" target="_blank">查看政策</a></li>
       <li><strong>RevenueCat：</strong>訂閱管理 — <a href="https://www.revenuecat.com/privacy" target="_blank">查看政策</a></li>
-      <li><strong>Groq：</strong>AI 功能（進階版）— <a href="https://groq.com/privacy-policy/" target="_blank">查看政策</a></li>
+      <li><strong>Groq：</strong>AI 補品對話、週報、拍照辨識功能 — <a href="https://groq.com/privacy-policy/" target="_blank">查看政策</a></li>
+      <li><strong>Google Gemini：</strong>補品資料 AI 整理功能 — <a href="https://ai.google.dev/gemini-api/terms" target="_blank">查看政策</a></li>
+      <li><strong>DuckDuckGo：</strong>補品相關資料網路搜尋 — <a href="https://duckduckgo.com/privacy" target="_blank">查看政策</a></li>
+      <li><strong>Serper.dev：</strong>補品相關資料網路搜尋（備用）— <a href="https://serper.dev/privacy-policy" target="_blank">查看政策</a></li>
     </ul>
   </section>
 
@@ -163,13 +189,14 @@
       <li>所有傳輸均透過 HTTPS 加密</li>
       <li>Firebase 安全規則確保只有您可存取自己的資料</li>
       <li>本地資料儲存於裝置 SQLite 中，不對外開放</li>
+      <li>補品照片於辨識完成後立即從記憶體中清除，不留存於伺服器</li>
     </ul>
   </section>
 
   <section>
     <h2>健康資訊免責聲明</h2>
     <div class="highlight">
-      本應用程式所有內容（包含 AI 生成建議）僅供個人記錄與參考，不構成醫療建議、診斷或治療。如有健康疑慮，請諮詢合格醫療人員。
+      本應用程式所有內容（包含 AI 生成的補品說明、效果描述及建議）僅供個人記錄與參考，不構成醫療建議、診斷或治療。補品資訊來源為網路公開資料，準確性可能有所不同。如有健康疑慮，請諮詢合格醫療人員。
     </div>
   </section>
 
@@ -196,7 +223,7 @@
       <li>Firebase 帳號與身份驗證資料</li>
       <li>所有補品、排程、打卡記錄</li>
       <li>健康數據與感受日誌</li>
-      <li>庫存資料</li>
+      <li>庫存資料與 AI 整理的補品說明</li>
     </ul>
     <p style="margin-top:16px;">處理流程：</p>
     <ol class="steps">
@@ -256,7 +283,6 @@ document.getElementById('deleteForm').addEventListener('submit', function(e) {
   btn.textContent = '送出中...';
   btn.disabled = true;
 
-  // 用 mailto 作為後備方案，同時顯示成功訊息
   const subject = encodeURIComponent('補品日記 — 帳號刪除請求');
   const body = encodeURIComponent(
     `刪除請求\n\n帳號：${email}\n原因：${reason || '未填寫'}\n說明：${message || '無'}`
